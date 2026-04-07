@@ -145,7 +145,7 @@ npm run dev               # http://localhost:5173
 cd backend && npm test
 ```
 
-## Deploy to Render (free tier)
+## How I Deploy to Render (free tier)
 
 1. Push to GitHub
 2. Create a new **Web Service** on Render → connect your repo → set root to `backend/`
@@ -154,11 +154,3 @@ cd backend && npm test
 5. Your public profile URL: `https://your-app.onrender.com/profile/yourusername`
 
 ---
-
-## Resume Bullets
-
-- Built a full-stack developer portfolio platform (DevLink) with React, Node.js/Express, PostgreSQL, and Redis, featuring JWT authentication, role-based route protection, and a shareable public profile URL
-- Designed and implemented 13 REST API endpoints with filtering, pagination, input validation, and centralized error handling; secured auth routes with bcrypt hashing and rate limiting
-- Integrated Redis caching on public profile routes (5-minute TTL) and AI tips (1-hour TTL), reducing redundant database queries and Anthropic API calls
-- Embedded Anthropic Claude API as an AI career coach that generates personalized resume tips and chat responses based on the user's live job application data and profile
-- Containerized the full stack (React + Express + PostgreSQL + Redis) with Docker Compose using a multi-stage Nginx frontend build, enabling single-command local and cloud deployment
