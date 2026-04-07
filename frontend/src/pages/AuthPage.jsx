@@ -22,7 +22,9 @@ export default function AuthPage() {
       const data = mode === "login"
         ? await authApi.login({ email: form.email, password: form.password })
         : await authApi.register(form);
-      login(data.token, data.user);
+      // login(data.token, data.user);
+      console.log("API response:", data);
+login(data.token, data.user);
     } catch (err) {
       setError(err.message);
     } finally {
