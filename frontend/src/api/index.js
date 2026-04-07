@@ -1,4 +1,5 @@
-const BASE = "/api";
+// const BASE = "/api";
+const BASE = import.meta.env.VITE_API_URL || "/api";
 
 function getToken() {
   return localStorage.getItem("devlink_token");
