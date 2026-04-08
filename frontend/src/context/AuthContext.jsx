@@ -8,11 +8,18 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (token) {
-      fetch("/api/auth/me", { headers: { Authorization: `Bearer ${token}` } })
+    const storedToken = localStorage.getItem("devlink_token");
+    if (storedToken) {
+      const BASE = import.meta.env.VITE_API_URL || "/api";
+      fetch(`${BASE}/auth/me`, {
+        headers: { Authorization: `Bearer ${storedToken}` }
+      })
         .then((r) => r.json())
-        .then((data) => { if (data.success) setUser(data.user); else logout(); })
-        .catch(logout)
+        .then((data) => {
+          if (data.success) setUser(data.user);
+          else logout();
+        })
+        .catch(() => logout())
         .finally(() => setLoading(false));
     } else {
       setLoading(false);
