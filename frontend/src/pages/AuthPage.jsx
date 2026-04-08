@@ -47,7 +47,7 @@ login(data.token, data.user);
           {mode === "register" && (
             <>
               <input name="full_name" placeholder="Full name" value={form.full_name} onChange={handle} />
-              <input name="username" placeholder="Username (e.g. charan)" value={form.username} onChange={handle} required />
+              <input name="username" placeholder="Username " value={form.username} onChange={handle} required />
             </>
           )}
           <input name="email" type="email" placeholder="Email" value={form.email} onChange={handle} required />
